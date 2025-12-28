@@ -1,10 +1,10 @@
 #include <iostream>
 #include <cstdlib>
 
-
+#include "FlacFileFunctions.h"
 
 void printInstructions();
-void scanForFlacFiles(std::string filename);
+// void scanForFlacFiles(std::string filename);
 
 int main()
 {
@@ -32,8 +32,6 @@ int main()
 				std::cout << "\n\nEnter the name of the file you want the list of FLAC files in: ";
 				std::cin >> filename;
 				scanForFlacFiles(filename);
-				//std::cout << "\n\nScanning disk for FLAC files...\n";
-				//std::system("find /Users/alansantoyo -type f -name \"*.flac\" > ");
 				break;
 
 
@@ -57,13 +55,13 @@ void printInstructions()
 
 }
 
-void scanForFlacFiles(std::string filename)
-{
-	std::string command = "find /Users/alansantoyo -type f -name \"*.flac\" > ";
-	command.append(filename);
-
-	std::cout << "\n\nScanning disk for FLAC files..\n";
-	std::system(command.c_str());
-}
+//void scanForFlacFiles(std::string filename)
+//{
+//	std::string command = "find /Users/alansantoyo -type f -name \"*.flac\" > ";
+//	command.append(filename);
+//
+//	std::cout << "\n\nScanning disk for FLAC files..\n";
+//	std::system(command.c_str());
+//}
 
 

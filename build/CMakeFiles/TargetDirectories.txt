@@ -1,0 +1,3 @@
+/Users/alansantoyo/Programming/learningCPP/FlacFileManager/build/CMakeFiles/scanner.dir
+/Users/alansantoyo/Programming/learningCPP/FlacFileManager/build/CMakeFiles/edit_cache.dir
+/Users/alansantoyo/Programming/learningCPP/FlacFileManager/build/CMakeFiles/rebuild_cache.dir
