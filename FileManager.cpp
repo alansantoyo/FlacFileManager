@@ -4,7 +4,6 @@
 #include "FlacFileFunctions.h"
 
 void printInstructions();
-// void scanForFlacFiles(std::string filename);
 
 int main()
 {
@@ -52,16 +51,10 @@ void printInstructions()
 	std::cout << "\tl: List all files in current directory\n";
 	std::cout << "\ts: Scan disk for all FLAC files available for decoding\n";
 	std::cout << "\tq: Exit program\n\n";
+	
+	std::cout << "\x1b[32m green text on regular background \x1b[0m  \n";
 
 }
 
-//void scanForFlacFiles(std::string filename)
-//{
-//	std::string command = "find /Users/alansantoyo -type f -name \"*.flac\" > ";
-//	command.append(filename);
-//
-//	std::cout << "\n\nScanning disk for FLAC files..\n";
-//	std::system(command.c_str());
-//}
 
 
