@@ -19,23 +19,40 @@ int main()
 
 		switch(command)
 		{
-			case('r'):
+			case('r'): {
 				//listFlacFiles();
 				break;
-			case('l'):
+			}
+			case('l'): {
 				std::cout << "\n\nDisplaying all files in current directory: \n";
 				std::system("ls");
 				break;
-			case('s'):
+			}
+			case('s'): {
 				std::string filename;
 				std::cout << "\n\nEnter the name of the file you want the list of FLAC files in: ";
 				std::cin >> filename;
 				scanForFlacFiles(filename);
 				break;
-
-
+			}
+			case('f'): {
+				// Initialize a 'Tracklist' object
+				// 	constructor would scan the 'flac' music files and initialize a sort of list object with each
+				// 		file path in the 'Music' folder.
+				//
+				// system("clear"); to clear the screen
+				//
+				// display 5 file names at a time
+				//
+				// 
+				break;
+			}
+			default: {
+			}
 		}
 
+		std::system("clear");
+		std::cout << "\n\n\n\n\n\n\n\n\n";
 	} while(command != 'q');
 
 	std::cout << "\n\nExiting Program...\n";
@@ -50,11 +67,10 @@ void printInstructions()
 	std::cout << "\tr: Scan drive for all .flac files\n";
 	std::cout << "\tl: List all files in current directory\n";
 	std::cout << "\ts: Scan disk for all FLAC files available for decoding\n";
+	std::cout << "\tf: Enter file viewing mode\n";
 	std::cout << "\tq: Exit program\n\n";
 	
 	std::cout << "\x1b[32m green text on regular background \x1b[0m  \n";
 
 }
-
-
 
