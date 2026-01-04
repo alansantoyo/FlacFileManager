@@ -2,8 +2,6 @@
 
 Playlist::Playlist()
 {
-	DIR           *d;
-	struct dirent *dir;
 	d = opendir("/Users/alansantoyo/Downloads/Music");
 	if (d)
 	{
@@ -14,8 +12,12 @@ Playlist::Playlist()
 					ArtistFolders.insert(dir->d_name);
     		}
 
-    	closedir(d);
   	}
+}
+
+Playlist::~Playlist()
+{
+	closedir(d);
 }
 
 void Playlist::printArtistFolders()

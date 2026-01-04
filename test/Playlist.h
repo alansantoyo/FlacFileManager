@@ -7,9 +7,12 @@
 
 class Playlist
 {
-	
+	DIR *d;
+	struct dirent *dir;
 public:
 	Playlist();
+	~Playlist();
+
 	std::set<std::string> ArtistFolders;
 	void printArtistFolders();
 
