@@ -7,18 +7,27 @@
 
 class Playlist
 {
+	DIR *s; // For artist directories
+	struct dirent *art;
+
 	DIR *d;
 	struct dirent *dir;
+	std::string dirPath = "/Users/alansantoyo/Downloads/Music";
 public:
 	Playlist();
 	~Playlist();
 
 	std::set<std::string> ArtistFolders;
+	std::set<std::string> CurrentArtistDirectory;
+
 	void printArtistFolders();
+	void OpenDirectory(std::string PathName);
+	void printFolderContents(std::string FolderName);
 
 	friend std::ostream& operator<<(std::ostream& out, const Playlist &p);
-
 };
+
+
 
 template<typename T>
 std::ostream& operator<<(std::ostream& out, const std::set<T>& set)
