@@ -2,6 +2,7 @@
 
 Playlist::Playlist()
 {
+	std::system("clear");
 	d = opendir(dirPath.c_str());
 	if (d)
 	{
@@ -9,7 +10,8 @@ Playlist::Playlist()
 		{
 			if(std::strcmp(dir->d_name, ".") != 0) // || std::strcmp(dir->d_name, "..") != 0)
 				if(std::strcmp(dir->d_name, "..") != 0)
-					ArtistFolders.insert(dir->d_name);
+					if(std::strcmp(dir->d_name, ".DS_Store") != 0)
+						ArtistFolders.insert(dir->d_name);
     		}
 
   	}
@@ -37,13 +39,13 @@ void Playlist::OpenDirectory(std::string PathName)
 		{
 			if(std::strcmp(art->d_name, ".") != 0)
 				if(std::strcmp(art->d_name,"..") != 0)
-					CurrentArtistDirectory.insert(art->d_name);
+					if(std::strcmp(art->d_name, ".DS_Store") != 0)
+						CurrentArtistDirectory.insert(art->d_name);
 		}
 		closedir(s);
 	}
 
 }
-
 
 void Playlist::printFolderContents(std::string FolderName)
 {
