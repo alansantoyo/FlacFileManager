@@ -22,4 +22,4 @@ make
 ./scanner
 ```
 ## To Run Locally
-* **Please update the root search path in Playlist.h (the dirPath variable) to match your machine's music folder before compiling.
+* Please update the root search path in Playlist.h (the dirPath variable) to match your machine's music folder before compiling.
