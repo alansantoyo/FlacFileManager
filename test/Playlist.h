@@ -4,27 +4,13 @@
 #include <dirent.h>
 #include <iostream>
 #include <set>
+#include <filesystem>
 
 class Playlist
 {
-	DIR *s; // For artist directories
-	struct dirent *art;
-
-	DIR *d;
-	struct dirent *dir;
-	std::string dirPath = "/Users/alansantoyo/Downloads/Music";
 public:
+	std::filesystem::path homeDir;
 	Playlist();
-	~Playlist();
-
-	std::set<std::string> ArtistFolders;
-	std::set<std::string> CurrentArtistDirectory;
-
-	void printArtistFolders();
-	void OpenDirectory(std::string PathName);
-	void printFolderContents(std::string FolderName);
-
-	friend std::ostream& operator<<(std::ostream& out, const Playlist &p);
 };
 
 

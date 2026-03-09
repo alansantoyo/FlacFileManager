@@ -2,64 +2,15 @@
 
 Playlist::Playlist()
 {
-	std::system("clear");
-	d = opendir(dirPath.c_str());
-	if (d)
-	{
-		while ((dir = readdir(d)) != NULL)
-		{
-			if(std::strcmp(dir->d_name, ".") != 0) // || std::strcmp(dir->d_name, "..") != 0)
-				if(std::strcmp(dir->d_name, "..") != 0)
-					if(std::strcmp(dir->d_name, ".DS_Store") != 0)
-						ArtistFolders.insert(dir->d_name);
-    		}
-
-  	}
-}
-
-Playlist::~Playlist()
-{
-	closedir(d);
-}
-
-void Playlist::printArtistFolders()
-{
-	std::cout << ArtistFolders << "\n";
-}
-
-void Playlist::OpenDirectory(std::string PathName)
-{
-	if(!CurrentArtistDirectory.empty())
-		CurrentArtistDirectory.clear();
-
-	s = opendir(PathName.c_str());
-	if (s)
-	{
-		while((art = readdir(s)) != NULL)
-		{
-			if(std::strcmp(art->d_name, ".") != 0)
-				if(std::strcmp(art->d_name,"..") != 0)
-					if(std::strcmp(art->d_name, ".DS_Store") != 0)
-						CurrentArtistDirectory.insert(art->d_name);
-		}
-		closedir(s);
-	}
+	homeDir = std::getenv("HOME");
 
 }
-
-void Playlist::printFolderContents(std::string FolderName)
-{
-	std::string newPath = dirPath;
-
-	newPath.push_back('/');
-
-	newPath.append(FolderName);
-
-	newPath.push_back('/');
-
-	OpenDirectory(newPath);
-
-	std::cout << CurrentArtistDirectory << "\n";
-
-}
+/*
+Current issue:
+If the current file is not a directory, the program segfaults.
+Added error checking to identify when the current file is not a directory,
+	but now I need to handle the error so that the program does not abort. 
+	
+	Possible solution: Incrementing an iterator until it reaches an actual directory.
+*/
 

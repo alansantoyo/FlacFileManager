@@ -1,7 +1,3 @@
-cmake_minimum_required(VERSION 3.12...3.31)
+add_executable(scanner_test TestFile.cpp Playlist.cpp Menu.cpp)
 
-project(test)
-
-add_executable(test TestFile.cpp Playlist.cpp Playlist.h)
-
-target_link_libraries(test PRIVATE)
+target_link_libraries(scanner_test PRIVATE gtest gtest_main)
