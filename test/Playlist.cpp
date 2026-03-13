@@ -2,15 +2,25 @@
 
 Playlist::Playlist()
 {
-	homeDir = std::getenv("HOME");
+	homeDir = std::getenv("HOME");  // This will only work on a Mac or Linux machine!
+	currDir = homeDir;
+}
 
+void Playlist::displayDirContents()
+{
+	for(auto const& dir_entry : std::filesystem::directory_iterator{currDir})
+	{
+		if(dir_entry.path().filename().string()[0] != '.') // Make sure the current file isn't hidden before printing
+			std::cout << dir_entry.path() << "\n";
+		else;	// Do nothing
+	}
 }
 /*
 Current issue:
-If the current file is not a directory, the program segfaults.
-Added error checking to identify when the current file is not a directory,
-	but now I need to handle the error so that the program does not abort. 
-	
-	Possible solution: Incrementing an iterator until it reaches an actual directory.
+	Home directory will remain unchanged.
+	Current directory will be equal to the current directory.
+	Current directory can be changed.
+
+
 */
 

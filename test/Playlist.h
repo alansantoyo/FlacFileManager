@@ -10,7 +10,13 @@ class Playlist
 {
 public:
 	std::filesystem::path homeDir;
+	std::filesystem::path currDir;
+
 	Playlist();
+
+	void displayDirContents();
+
+
 };
 
 

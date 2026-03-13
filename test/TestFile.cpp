@@ -9,3 +9,22 @@ TEST(InitTest, HomeDirFound)
 	EXPECT_EQ(actual, findHome.homeDir);
 }
 
+TEST(DirTest, CurrAndHomeEqual)
+{
+	Playlist dir;
+	EXPECT_EQ(dir.homeDir, dir.currDir);
+}
+
+// int main() // Simple test to make sure directory contents are printed out.
+// {
+// 	Playlist dir;
+//
+//	dir.displayDirContents();
+//
+//	return 0;
+// }
+
+
+// What's Next???????
+//
+// 
